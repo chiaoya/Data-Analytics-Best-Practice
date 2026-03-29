@@ -10,22 +10,22 @@ The notebooks are intentionally split by use case so you can pick the one that m
 
 ## Files
 
-- `data_case_study.ipynb`
+- `0_data_case_study.ipynb`
   General-purpose notebook for most analytics case studies. Use this for loading data, data quality checks, cleaning, feature preparation, exploratory data analysis, and simple business insights.
 
-- `customer_segmentation_clustering.ipynb`
+- `1_customer_segmentation_clustering.ipynb`
   Notebook for unsupervised customer segmentation. Includes feature preparation, clustering model comparison, PCA-based 2D and 3D visualization, and cluster profiling.
 
-- `regression_modeling.ipynb`
+- `3_regression_modeling.ipynb`
   Notebook for continuous-target prediction tasks on structured data. Covers baseline regression models, random forest, XGBoost, model comparison, and SHAP-based feature interpretation.
 
-- `classification_modeling.ipynb`
+- `4_classification_modeling.ipynb`
   Notebook for labeled classification tasks on structured data. Covers binary and multiclass classification with baseline models, random forest, XGBoost, and an optional RNN scaffold for true sequence data.
 
-- `experimentation_causal_inference.ipynb`
+- `2_experimentation_causal_inference.ipynb`
   Notebook for causal and impact analysis. Includes A/B test style evaluation, Difference-in-Differences, and propensity score weighting.
 
-- `time_series_forecasting.ipynb`
+- `5_time_series_forecasting.ipynb`
   Notebook for forecasting over time. Includes a simple baseline model, ARIMA, SARIMA, and optional deep-learning scaffolds for LSTM and Transformer-based approaches.
 
 - `requirements.txt`
@@ -42,12 +42,12 @@ The notebooks are intentionally split by use case so you can pick the one that m
 
 ## Recommended Usage
 
-- Use `data_case_study.ipynb` for most standard case studies on CSV or similar tabular datasets.
-- Use `customer_segmentation_clustering.ipynb` when the goal is segmentation without a labeled target.
-- Use `regression_modeling.ipynb` when the task is continuous-value prediction, sales driver analysis, or regression model comparison.
-- Use `classification_modeling.ipynb` when the task is binary or multiclass prediction.
-- Use `experimentation_causal_inference.ipynb` when the task is treatment effect estimation or uplift analysis.
-- Use `time_series_forecasting.ipynb` when the task is forecasting with timestamped data.
+- Use `0_data_case_study.ipynb` for most standard case studies on CSV or similar tabular datasets.
+- Use `1_customer_segmentation_clustering.ipynb` when the goal is segmentation without a labeled target.
+- Use `3_regression_modeling.ipynb` when the task is continuous-value prediction, sales driver analysis, or regression model comparison.
+- Use `4_classification_modeling.ipynb` when the task is binary or multiclass prediction.
+- Use `2_experimentation_causal_inference.ipynb` when the task is treatment effect estimation or uplift analysis.
+- Use `5_time_series_forecasting.ipynb` when the task is forecasting with timestamped data.
 
 ## Supported Environments
 
