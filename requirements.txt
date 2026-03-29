@@ -1,0 +1,16 @@
+# Core analysis
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+ipykernel
+
+# Tree-based modeling and explainability
+xgboost
+shap
+
+# Optional deep learning for sequence use cases
+tensorflow
+torch

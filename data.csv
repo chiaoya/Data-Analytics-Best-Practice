@@ -1,0 +1,21 @@
+customer_id,signup_date,segment,channel,sessions,time_on_site_min,pages_viewed,added_to_cart,converted,order_value
+1001,2026-01-03,SMB,Organic,3,4.5,6,0,0,0
+1002,2026-01-04,Enterprise,Paid Search,8,12.1,14,1,1,240
+1003,2026-01-05,Consumer,Email,5,7.2,9,1,0,0
+1004,2026-01-06,SMB,Referral,6,10.4,11,1,1,120
+1005,2026-01-08,Consumer,Organic,2,2.3,4,0,0,0
+1006,2026-01-10,Enterprise,Direct,9,15.0,18,1,1,310
+1007,2026-01-12,SMB,Email,4,6.8,8,0,0,0
+1008,2026-01-14,Consumer,Paid Social,7,9.6,13,1,1,95
+1009,2026-01-16,Enterprise,Referral,10,16.4,20,1,1,420
+1010,2026-01-18,Consumer,Organic,3,5.0,5,0,0,0
+1011,2026-01-21,SMB,Paid Search,6,8.7,10,1,1,140
+1012,2026-01-22,Enterprise,Email,7,11.3,15,1,1,275
+1013,2026-01-23,Consumer,Direct,4,6.1,7,0,0,0
+1014,2026-01-24,SMB,Organic,5,7.8,9,1,0,0
+1015,2026-01-25,Enterprise,Paid Social,11,18.2,22,1,1,510
+1016,2026-01-27,Consumer,Referral,6,8.1,10,1,0,0
+1017,2026-01-29,SMB,Direct,7,9.4,12,1,1,165
+1018,2026-02-01,Enterprise,Organic,8,13.5,16,1,1,360
+1019,2026-02-03,Consumer,Email,3,4.2,6,0,0,0
+1020,2026-02-05,SMB,Paid Search,9,12.7,17,1,1,230
