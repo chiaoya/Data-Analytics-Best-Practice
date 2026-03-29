@@ -1,39 +1,79 @@
 # Data Analytics Best Practice
 
-This project is a simple starter setup for running a data analysis notebook in VS Code.
+Reusable notebooks for common structured-data case studies, from general analysis to modeling, experimentation, and forecasting.
+
+## Project Purpose
+
+This repository is designed as a starter kit for data analytics case studies based on structured tabular data.
+
+The notebooks are intentionally split by use case so you can pick the one that matches the assignment instead of forcing every workflow into a single file.
 
 ## Files
 
-- `data_case_study_template.ipynb`: general structured-data case study template for loading data, quality checks, cleaning, processing, EDA, and simple business insights
-- `customer_segmentation_clustering_template.ipynb`: clustering template for customer segmentation with PCA-based 2D and 3D visualizations
-- `supervised_modeling_template.ipynb`: regression, binary classification, and multiclass classification template with baseline models, random forest, XGBoost, and SHAP
-- `experimentation_causal_inference_template.ipynb`: A/B testing, Difference-in-Differences, and propensity score weighting template
-- `time_series_forecasting_template.ipynb`: forecasting template covering baseline, ARIMA, SARIMA, and optional LSTM/Transformer scaffolds
-- `data.csv`: sample dataset so the notebook runs immediately
-- `requirements.txt`: Python packages needed by the notebook
+- `data_case_study.ipynb`
+  General-purpose notebook for most analytics case studies. Use this for loading data, data quality checks, cleaning, feature preparation, exploratory data analysis, and simple business insights.
 
-## Which Notebook To Use
+- `customer_segmentation_clustering.ipynb`
+  Notebook for unsupervised customer segmentation. Includes feature preparation, clustering model comparison, PCA-based 2D and 3D visualization, and cluster profiling.
 
-- Use `data_case_study_template.ipynb` for most standard analytics case studies on structured tabular data
-- Use `customer_segmentation_clustering_template.ipynb` when the task is unsupervised segmentation
-- Use `supervised_modeling_template.ipynb` when the task is prediction or driver analysis
-- Use `experimentation_causal_inference_template.ipynb` when the task is impact measurement or uplift
-- Use `time_series_forecasting_template.ipynb` when the task is forecasting over time
+- `regression_modeling.ipynb`
+  Notebook for continuous-target prediction tasks on structured data. Covers baseline regression models, random forest, XGBoost, model comparison, and SHAP-based feature interpretation.
 
-## Run In VS Code
+- `classification_modeling.ipynb`
+  Notebook for labeled classification tasks on structured data. Covers binary and multiclass classification with baseline models, random forest, XGBoost, and an optional RNN scaffold for true sequence data.
 
-1. Open this folder in VS Code.
-2. Open the terminal in VS Code.
-3. Create a Python 3.11 virtual environment:
+- `experimentation_causal_inference.ipynb`
+  Notebook for causal and impact analysis. Includes A/B test style evaluation, Difference-in-Differences, and propensity score weighting.
+
+- `time_series_forecasting.ipynb`
+  Notebook for forecasting over time. Includes a simple baseline model, ARIMA, SARIMA, and optional deep-learning scaffolds for LSTM and Transformer-based approaches.
+
+- `requirements.txt`
+  Python dependencies used by the notebooks.
+
+- `.gitignore`
+  Ignore rules for virtual environments, notebook checkpoints, cache files, and local Jupyter state.
+
+- `.vscode/settings.json`
+  Workspace settings so VS Code uses the local `.venv` interpreter and runs notebooks with a local Jupyter server.
+
+- `.vscode/extensions.json`
+  Recommended VS Code extensions for Python and Jupyter.
+
+## Recommended Usage
+
+- Use `data_case_study.ipynb` for most standard case studies on CSV or similar tabular datasets.
+- Use `customer_segmentation_clustering.ipynb` when the goal is segmentation without a labeled target.
+- Use `regression_modeling.ipynb` when the task is continuous-value prediction, sales driver analysis, or regression model comparison.
+- Use `classification_modeling.ipynb` when the task is binary or multiclass prediction.
+- Use `experimentation_causal_inference.ipynb` when the task is treatment effect estimation or uplift analysis.
+- Use `time_series_forecasting.ipynb` when the task is forecasting with timestamped data.
+
+## Supported Environments
+
+These notebooks are standard `.ipynb` files and can be used in:
+
+- VS Code
+- Jupyter Notebook
+- JupyterLab
+- Google Colab
+
+## Local Setup
+
+If you want to run the notebooks locally, a simple setup is:
+
+1. Open this folder in your preferred local environment.
+2. Open a terminal.
+3. Create a virtual environment:
 
 ```bash
-python3.11 -m venv .venv311
+python3 -m venv .venv
 ```
 
 4. Activate it:
 
 ```bash
-source .venv311/bin/activate
+source .venv/bin/activate
 ```
 
 5. Install dependencies:
@@ -42,55 +82,49 @@ source .venv311/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-6. Install the VS Code extensions:
-   - Python
-   - Jupyter
+6. Open the notebook you want to use.
+7. Select the Python kernel from `.venv`.
+8. Run the notebook cells from top to bottom.
 
-7. Open `data_case_study_template.ipynb`.
-8. Click `Select Kernel` in the top right.
-9. Choose the Python interpreter from `.venv311`.
-10. Run the notebook cells from top to bottom.
+## VS Code Notes
 
-Note: `tensorflow` and `torch` are included for optional sequence and transformer sections. If you want a lighter setup first, you can comment those lines out in `requirements.txt` and install them only when needed.
+If you use VS Code:
 
-## Run A Single Cell
+- install the Python extension
+- install the Jupyter extension
+- the workspace includes `.vscode/settings.json` so the local `.venv` interpreter is selected more easily
 
-If you only want to run one cell at a time in VS Code:
+## Colab Notes
 
-1. Open `data_case_study_template.ipynb`.
-2. Confirm the kernel is `.venv311`.
-3. Hover over the cell you want to run.
-4. Click the `Run` triangle on that cell.
-5. To run the current cell with the keyboard, use:
-   - `Shift+Enter`: run cell and move to the next one
-   - `Ctrl+Enter` or `Cmd+Enter`: run the current cell and stay on it
+If you use Google Colab:
 
-This workspace includes a `.vscode/settings.json` file so the notebook cell toolbar stays visible and the project opens with the correct interpreter by default.
+- upload the notebook file to Colab, or open it from GitHub
+- upload your dataset manually, or mount Google Drive and update `DATA_PATH`
+- install any missing packages inside Colab if needed
 
-## Python Version Note
+Example:
 
-Use Python `3.11` for this project. Python `3.14` can cause notebook kernel issues in VS Code, including failing to run individual cells.
+```python
+!pip install -r requirements.txt
+```
 
-## Use Your Own Data
+## Data Input
 
-The notebook uses this line:
+The notebooks default to:
 
 ```python
 DATA_PATH = Path('data.csv')
 ```
 
-If you want to use another CSV:
+This repository does not include a sample dataset by default.
 
-- replace `data.csv` in the project root, or
-- change `DATA_PATH` in the notebook
+Before running a notebook, do one of these:
 
-## Current Project Issues Found
+- place your own `data.csv` file in the project root, or
+- update `DATA_PATH` inside the notebook to point to your dataset
 
-- The original notebook depended on `data.csv`, but the file did not exist.
-- The original notebook had a `pip install` cell inside the notebook, which is not a clean VS Code workflow.
-- The original notebook included stale cell outputs and an import error for `matplotlib`.
-- The original modeling example was not safe to run on common mixed-type datasets.
+## Notes
 
-## Recommended Next Step
-
-After the notebook runs successfully with the sample data, replace the sample CSV with your real dataset and update the markdown sections with your own business questions and findings.
+- These notebooks are designed primarily for structured data, not NLP, computer vision, or recommender-system case studies.
+- Some advanced sections, such as XGBoost, SHAP, LSTM, and Transformer examples, may require additional setup time or heavier dependencies.
+- Deep learning sections are included as optional scaffolds, not as the default recommendation for ordinary tabular case studies.
